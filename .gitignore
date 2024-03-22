@@ -1,0 +1,6 @@
+.env
+.env-non-dev
+venv
+__pycache__
+.dockerignore
+settings.txt
