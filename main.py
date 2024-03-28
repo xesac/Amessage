@@ -5,6 +5,7 @@ from fastapi.responses import RedirectResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
+from fastapi.staticfiles import StaticFiles
 
 from db_redis.redis import get_redis
 from routers.message_router import router as message_router
@@ -34,6 +35,7 @@ app = FastAPI(
 )
 
 app.include_router(message_router)
+app.mount("/static", StaticFiles(directory="static"), "static")
 
 @app.get('/')
 async def redirect():
