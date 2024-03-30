@@ -64,15 +64,18 @@ async def create_message(
     request: Request,
     redis=Depends(get_redis),
 ):
-    try:
-        secret_key = secrets.token_hex(30)
-        await redis.set(
-            secret_key, message, ex=timedelta(minutes=30)
-        )
-        send_message_confirmation_email(secret_key, email)
-        return templates.TemplateResponse(
-            'after_create.html', {'request': request, 'secret_key': secret_key}
-        )
-    except:
-        return templates.TemplateResponse('500.html', {'request': request})
+    if len(message) > 1000:
+        return templates.TemplateResponse('len.html', {'request': request})
+    else:
+        try:
+            secret_key = secrets.token_hex(30)
+            await redis.set(
+                secret_key, message, ex=timedelta(minutes=30)
+            )
+            send_message_confirmation_email(secret_key, email)
+            return templates.TemplateResponse(
+                'after_create.html', {'request': request, 'secret_key': secret_key}
+            )
+        except:
+            return templates.TemplateResponse('500.html', {'request': request})
 

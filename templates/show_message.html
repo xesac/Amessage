@@ -1,58 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/static/ic.png" type="image/x-icon">
-    <title>Amessage</title>
-    <style>
-        body {
-            background-color: black;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: white;
-        }
-        .container {
-            width: 300px;
-            height: 300px;
-            border: 2px solid white;
-            padding: 20px;
-            overflow-y: auto; /* Show vertical scrollbar when content exceeds the height */
-            overflow-wrap: break-word; /* Разрыв по словам в случае необходимости */
-        }
-        h1 {
-            font-size: 2em;
-        }
-        button {
-        padding: 10px 20px;
-        margin: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 200px; /* Фиксированная ширина кнопок */
-        }
-        button:hover {
-        transform: scale(1.1); /* Увеличение размера по наведению */
-        }
+{% extends "index.html" %}
 
-    </style>
-</head>
-<body>
+    {% block content %}
     <h1>AMessage</h1>
     <p>Сообщение удалится через: {{time}} секунд</p>
-    <div class="container">
+    <div class="message">
         <p>{{message}}</p>
     </div>
     <a href="/message"><button>Вернуться на главную страницу</button></a>
     <a style="padding-top: 20px;" class="tg" target="_blank" href="https://t.me/xaslx"><img width="50px" height="50px" src="/static/telegram.png" alt="tg"></a>
-</body>
-</html>
-
+    {% endblock %}

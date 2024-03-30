@@ -1,79 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "index.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/static/ic.png" type="image/x-icon">
-    <title>Создать сообщение</title>
-    <style>
-        body {
-            background-color: black;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: white;
-        }
-
-        h1 {
-            font-size: 2em;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            resize: none;
-        }
-
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 200px;
-        }
-        h2 {
-            color: white;
-        }
-        button:hover {
-            transform: scale(1.1);
-        }
-        .white {
-            color: white;
-        }
-        .container {
-        width: 350px;
-        height: 500px;
-        border: 2px solid white;
-        border-radius: 10px; /* Закругленные углы */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        }
-    </style>
-</head>
-
-<body>
+    {% block content %}
     <h1>AMessage</h1>
     <div class="container">
         <h2>Создать сообщение</h2>
         <form class="formMessage"  method="POST">
             <p class="white">На почту придёт секретный ключ</p>
-            <input type="email" name="email" placeholder="Ваша почта" required><br>
-            <textarea name="message" rows="4" placeholder="Ваше сообщение" required></textarea><br>
+            <input class="email_input" type="email" name="email" placeholder="Ваша почта" required>
+            <br>
+            <br>
+            <textarea class="text_area" name="message" rows="4" placeholder="Ваше сообщение" required></textarea><br>
             <button type="submit">Создать</button>
         </form>
         <a href="/message"><button>Вернуться на главную страницу</button></a>
@@ -115,7 +51,4 @@
             });
         });
     </script>    
-    
-</body>
-
-</html>
+    {% endblock %}

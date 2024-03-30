@@ -1,0 +1,75 @@
+body {
+    background-color: black;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+button {
+padding: 10px 20px;
+margin: 10px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+width: 200px; /* Фиксированная ширина кнопок */
+}
+.container {
+    width: 350px;
+    height: auto; /* Автоматическая высота в зависимости от содержимого */
+    border: 2px solid white;
+    border-radius: 10px; /* Закругленные углы */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+button:hover {
+transform: scale(1.1); /* Увеличение размера по наведению */
+}
+.tg {
+    padding-top: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.email_input {
+    width: 200px;
+}
+.text_area {
+    width: 200px;
+    resize: none;
+}
+.text {
+    margin-top: 10px;
+}
+.message {
+    width: 350px;
+    height: auto;
+    border: 2px solid white;
+    padding: 20px;
+    overflow-y: auto; /* Show vertical scrollbar when content exceeds the height */
+    overflow-wrap: break-word; /* Разрыв по словам в случае необходимости */
+}
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin: 10px;
+}
