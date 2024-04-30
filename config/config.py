@@ -10,6 +10,8 @@ class Settings(BaseSettings):
     SMTP_USER: str
     SMTP_PASS: str
 
+    DSN: str
+
     model_config = SettingsConfigDict(env_file=".env")
 
 

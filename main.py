@@ -11,10 +11,11 @@ from db_redis.redis import get_redis
 from routers.message_router import router as message_router
 from routers.message_router import templates
 import sentry_sdk
+from config.config import settings
 
 
 sentry_sdk.init(
-    dsn="https://a87f4ee2fe47cb79cf51209dc6ee59df@o4506869734309888.ingest.us.sentry.io/4506959781953536",
+    dsn=settings.DSN,
     traces_sample_rate=1.0,
     profiles_sample_rate=1.0,
 )
