@@ -15,6 +15,7 @@
 - Redis
 - Celery
 - Jinja2
+- Docker
 - Также html, css, js
 
   ### [можно протестировать](https://amessage-5os3.onrender.com/message/create)
