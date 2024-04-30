@@ -16,3 +16,5 @@
 - Celery
 - Jinja2
 - Также html, css, js
+
+  ### [можно протестировать](https://amessage-5os3.onrender.com/message/create)
